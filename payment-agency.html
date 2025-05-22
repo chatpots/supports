@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment Agency | Support</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #121212;
+      color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .support-box {
+      background: #1e1e1e;
+      padding: 2.5rem;
+      border-radius: 16px;
+      width: 94%;
+      max-width: 450px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .logo img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #444;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 1.5rem;
+      color: #ffffff;
+      margin-bottom: 1rem;
+    }
+
+    label {
+      font-weight: 700;
+      display: block;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      color: #ddd;
+    }
+
+    input,
+    textarea {
+      width: 92%;
+      padding: 0.8rem;
+      border: 1px solid #333;
+      background-color: #2a2a2a;
+      color: #fff;
+      border-radius: 10px;
+      font-size: 0.95rem;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #aaa;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 1.5rem;
+      background-color: #3498db;
+      color: #fff;
+      padding: 0.9rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    .live-chat {
+      background-color: #27ae60;
+      margin-top: 0.75rem;
+    }
+
+    .live-chat:hover {
+      background-color: #1e8449;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      text-align: center;
+      margin-top: 1.5rem;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="support-box">
+    <div class="logo">
+      <img src="logo.png" alt="Agency Logo" />
+    </div>
+    <h1>Payment Agency Support</h1>
+
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="John Doe" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="you@example.com" required />
+
+      <label for="issue">Issue</label>
+      <textarea id="issue" rows="4" placeholder="Describe your issue..." required></textarea>
+
+      <button type="submit">Send Request</button>
+      <button type="button" class="live-chat" onclick="startLiveChat()">Start Live Chat</button>
+    </form>
+
+    <div class="note">We aim to respond within 24 hours. Use Live Chat for urgent issues.</div>
+  </div>
+
+  <script>
+    function startLiveChat() {
+      if (window.chaport) {
+        chaport.open();
+      } else {
+        alert("Live chat is initializing, please wait.");
+      }
+    }
+  </script>
+
+  <!-- Begin of Chaport Live Chat code -->
+  <script type="text/javascript">
+    (function(w,d,v3){
+      w.chaportConfig = { appId : '68264d5e183660602a4b8da2' };
+      if(w.chaport) return;
+      v3 = w.chaport = {};
+      v3._q = [];
+      v3._l = {};
+      v3.q = function() { v3._q.push(arguments) };
+      v3.on = function(e,fn) {
+        if(!v3._l[e]) v3._l[e] = [];
+        v3._l[e].push(fn);
+      };
+      var s = d.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = 'https://app.chaport.com/javascripts/insert.js';
+      var ss = d.getElementsByTagName('script')[0];
+      ss.parentNode.insertBefore(s, ss);
+    })(window, document);
+  </script>
+  <!-- End of Chaport Live Chat code -->
+
+</body>
+</html>

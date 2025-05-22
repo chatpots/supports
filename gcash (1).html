@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GCash Customer Support</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f1f1f1;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #0078ff;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 24px;
+    }
+    .logo {
+      display: block;
+      margin: 20px auto;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .chat-box {
+      max-height: 300px;
+      overflow-y: auto;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 10px;
+      background: #fafafa;
+    }
+    .message {
+      margin: 10px 0;
+    }
+    .user {
+      text-align: right;
+      color: #0078ff;
+    }
+    .support {
+      text-align: left;
+      color: #444;
+    }
+    form input, form textarea, form button {
+      width: 94%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    form button {
+      background-color: #0078ff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      width:94%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>GCash Customer Support</header>
+
+  <!-- Circular GCash Logo -->
+  <img src="gcash.png" alt="GCash Logo" class="logo" />
+
+  <div class="container">
+    <div class="chat-box">
+      <div class="message support">Hi! Welcome to GCash Support. How can we help you today?</div>
+      <div class="message user">How can I withdraw my money?.</div>
+      <div class="message support">No worries! We'll help you with your Withdrawal. Please describe your issue below.</div>
+    </div>
+
+    <form onsubmit="openChaport(); return false;">
+      <input type="text" placeholder="Your Name" required />
+      <textarea placeholder="Describe your issue..." rows="4" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <!-- Begin of Chaport Live Chat code -->
+  <script type="text/javascript">
+    (function(w,d,v3){
+      w.chaportConfig = { appId : '68264d5e183660602a4b8da2' };
+      if(w.chaport) return;
+      v3 = w.chaport = {}; v3._q = []; v3._l = {};
+      v3.q = function(){ v3._q.push(arguments) };
+      v3.on = function(e,fn){ if(!v3._l[e]) v3._l[e] = []; v3._l[e].push(fn) };
+      var s = d.createElement('script');
+      s.type = 'text/javascript'; s.async = true;
+      s.src = 'https://app.chaport.com/javascripts/insert.js';
+      var ss = d.getElementsByTagName('script')[0];
+      ss.parentNode.insertBefore(s, ss);
+    })(window, document);
+
+    function openChaport() {
+      if (window.chaport) {
+        chaport.q('open');
+      } else {
+        alert("Live chat is loading, please wait a moment and try again.");
+      }
+    }
+  </script>
+  <!-- End of Chaport Live Chat code -->
+
+</body>
+</html>

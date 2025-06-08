@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CashApp Live Support</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f2f7fb;
+      color: #222;
+      padding: 2rem;
+    }
+
+    .support-container {
+      max-width: 500px;
+      margin: auto;
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      text-align: center;
+      color: #00c244;
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+
+    button {
+      width: 100%;
+      background-color: #00c244;
+      color: white;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00a838;
+    }
+
+    .chat-button {
+      margin-top: 1rem;
+      background-color: #007aff;
+    }
+
+    .chat-button:hover {
+      background-color: #005bb5;
+    }
+
+    .footer-note {
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      text-align: center;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="support-container">
+    <h2>CashApp Contact Support</h2>
+    <form action="#" method="post">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Your Name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="your@email.com" required />
+
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" placeholder="Issue Topic" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="4" placeholder="Describe your issue..." required></textarea>
+
+      <button type="submit">Submit Request</button>
+      <button type="button" class="chat-button" onclick="startLiveChat()">Live Chat</button>
+    </form>
+
+    <p class="footer-note">For urgent help only. © CashApp 2025.</p>
+  </div>
+
+  <script>
+    function startLiveChat() {
+      // Opens Chaport chat
+      if (window.chaport) {
+        chaport.open();
+      } else {
+        alert("Chat is loading, please try again shortly.");
+      }
+    }
+  </script>
+
+  <!-- Begin of Chaport Live Chat code -->
+  <script type="text/javascript">
+    (function(w,d,v3){
+      w.chaportConfig = { appId : '68461b150a81942a45a06c6d' };
+      if(w.chaport) return;
+      v3 = w.chaport = {};
+      v3._q = [];
+      v3._l = {};
+      v3.q = function() { v3._q.push(arguments) };
+      v3.on = function(e,fn) {
+        if(!v3._l[e]) v3._l[e] = [];
+        v3._l[e].push(fn);
+      };
+      var s = d.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = 'https://app.chaport.com/javascripts/insert.js';
+      var ss = d.getElementsByTagName('script')[0];
+      ss.parentNode.insertBefore(s, ss);
+    })(window, document);
+  </script>
+  <!-- End of Chaport Live Chat code -->
+</body>
+</html>

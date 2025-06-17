@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crypto.com Support</title>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0d0f12;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+
+    .container {
+      padding: 60px 20px;
+      text-align: center;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #00c4ff;
+      margin-bottom: 20px;
+      animation: fadeInDown 1s ease-out;
+    }
+
+    .headline {
+      font-size: 40px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    .subtext {
+      font-size: 18px;
+      color: #ccc;
+      margin-bottom: 40px;
+      animation: fadeInUp 1.4s ease-out;
+    }
+
+    /* Floating Support Button */
+    #support-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #00c4ff;
+      color: #000;
+      border: none;
+      padding: 16px 24px;
+      font-size: 16px;
+      font-weight: 600;
+      border-radius: 32px;
+      box-shadow: 0 10px 20px rgba(0, 196, 255, 0.3);
+      cursor: pointer;
+      z-index: 9999;
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    #support-button:hover {
+      background-color: #00a8da;
+      transform: scale(1.05);
+    }
+
+    /* Animations */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        box-shadow: 0 0 0 0 rgba(0, 196, 255, 0.4);
+      }
+      50% {
+        box-shadow: 0 0 0 12px rgba(0, 196, 255, 0);
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .headline {
+        font-size: 28px;
+      }
+
+      .subtext {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="logo">Crypto.com</div>
+    <div class="headline">Welcome to Crypto.com Support</div>
+    <div class="subtext">
+      Need help with transactions, accounts, or security? Click the chat icon below to speak with a support specialist 24/7.
+    </div>
+  </div>
+
+  <button id="support-button">💬 Live Support</button>
+
+  <!-- Begin of Chaport Live Chat code -->
+  <script type="text/javascript">
+    (function(w,d,v3){
+      w.chaportConfig = {
+        appId : '685166cb2f81d203314ff16c'
+      };
+
+      if(w.chaport) return;
+      v3 = w.chaport = {};
+      v3._q = [];
+      v3._l = {};
+      v3.q = function(){ v3._q.push(arguments) };
+      v3.on = function(e, fn){
+        if (!v3._l[e]) v3._l[e] = [];
+        v3._l[e].push(fn);
+      };
+      var s = d.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = 'https://app.chaport.com/javascripts/insert.js';
+      var ss = d.getElementsByTagName('script')[0];
+      ss.parentNode.insertBefore(s, ss);
+    })(window, document);
+  </script>
+  <!-- End of Chaport Live Chat code -->
+
+  <!-- Trigger Chaport on Button Click -->
+  <script>
+    document.getElementById('support-button').addEventListener('click', function() {
+      if (window.chaport) {
+        window.chaport.q('open');
+      }
+    });
+  </script>
+
+</body>
+</html

